@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Slendytubbies (Zeoworks)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Formulario: Slendytubbies</h1>
+            <p class="subtitle">Comunidad Zeoworks</p>
+        </header>
+
+        <!-- Mensaje que se muestra al enviar con éxito -->
+        <div id="exito" class="mensaje mensaje-exito" hidden>
+            <h2>¡Respuestas enviadas!</h2>
+            <p>Gracias por participar, la comunidad Zeoworks ya recibió tu formulario.</p>
+        </div>
+
+        <form id="formulario" novalidate>
+
+            <!-- Campos ocultos -->
+            <input type="hidden" name="form_version" value="Slendytubbies_v3_Final">
+            <input type="hidden" name="engine" value="ZeoworksEngine">
+
+            <!-- Trampa anti-spam: las personas no lo ven, los bots sí lo rellenan -->
+            <div class="hp" aria-hidden="true">
+                <label for="website">No rellenes este campo</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <!-- 1. Texto simple -->
+            <div class="form-group">
+                <label for="username">1. Nombre de usuario / Nickname:</label>
+                <input type="text" id="username" name="nombre_usuario" maxlength="20" placeholder="Ej: PoFan123" required>
+            </div>
+
+            <!-- 2. Contraseña -->
+            <div class="form-group">
+                <label for="access_key">2. Clave de acceso al servidor:</label>
+                <input type="password" id="access_key" name="clave_acceso" maxlength="10" placeholder="••••••••" autocomplete="off">
+            </div>
+
+            <!-- 3. Radio: juego favorito -->
+            <div class="form-group">
+                <span class="group-label" id="lbl-juego">3. ¿Cuál es tu entrega favorita de Slendytubbies? (elige una):</span>
+                <div class="options-group" role="radiogroup" aria-labelledby="lbl-juego">
+                    <label class="radio-label"><input type="radio" name="juego_favorito" value="ST1" required> Slendytubbies 1 (Classic)</label>
+                    <label class="radio-label"><input type="radio" name="juego_favorito" value="ST2"> Slendytubbies II</label>
+                    <label class="radio-label"><input type="radio" name="juego_favorito" value="ST3"> Slendytubbies 3 (Campaign/Multiplayer)</label>
+                    <label class="radio-label"><input type="radio" name="juego_favorito" value="ST2D"> Slendytubbies 2D</label>
+                </div>
+            </div>
+
+            <!-- 4. Radio: dificultad -->
+            <div class="form-group">
+                <span class="group-label" id="lbl-dificultad">4. Dificultad preferida al recolectar Tubby Papillas:</span>
+                <div class="options-group" role="radiogroup" aria-labelledby="lbl-dificultad">
+                    <label class="radio-label"><input type="radio" name="dificultad" value="facil" required> Fácil (Día)</label>
+                    <label class="radio-label"><input type="radio" name="dificultad" value="media"> Media (Atardecer)</label>
+                    <label class="radio-label"><input type="radio" name="dificultad" value="dificil"> Difícil (Noche)</label>
+                </div>
+            </div>
+
+            <!-- 5. Checkbox: monstruos -->
+            <div class="form-group">
+                <span class="group-label" id="lbl-monstruo">5. Selecciona los antagonistas que más te asustan (puedes elegir varios):</span>
+                <div class="options-group" role="group" aria-labelledby="lbl-monstruo">
+                    <label class="checkbox-label"><input type="checkbox" name="monstruo" value="tinky_winky"> Tinky Winky (Tank / Classic)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="monstruo" value="dipsy"> Dipsy (Chainsaw / Lake)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="monstruo" value="laa_laa"> Laa-Laa</label>
+                    <label class="checkbox-label"><input type="checkbox" name="monstruo" value="po"> Po (Fases 1, 2 y Spider Po)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="monstruo" value="shadow_tubby"> Shadow Tubby</label>
+                </div>
+            </div>
+
+            <!-- 6. Checkbox: modos de juego -->
+            <div class="form-group">
+                <span class="group-label" id="lbl-modo">6. Modos de juego que has probado en Slendytubbies 3:</span>
+                <div class="options-group" role="group" aria-labelledby="lbl-modo">
+                    <label class="checkbox-label"><input type="checkbox" name="modo" value="recoger"> Recoger (Collect)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="modo" value="supervivencia"> Supervivencia (Survival)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="modo" value="versus"> Versus</label>
+                    <label class="checkbox-label"><input type="checkbox" name="modo" value="sandbox"> Sandbox</label>
+                </div>
+            </div>
+
+            <!-- 7. Lista desplegable: mapa -->
+            <div class="form-group">
+                <label for="mapa">7. Selecciona tu mapa favorito:</label>
+                <select name="mapa_favorito" id="mapa">
+                    <option value="main_land" selected>Main Land (Tubbylandia)</option>
+                    <option value="satellite_station">Estación de Satélite</option>
+                    <option value="secret_lair">Guarida Secreta</option>
+                    <option value="custard_facility">Planta de Papilla</option>
+                    <option value="outskirts">Afueras (Outskirts)</option>
+                    <option value="cabin">La Cabaña</option>
+                </select>
+            </div>
+
+            <!-- 8. Lista desplegable: personaje -->
+            <div class="form-group">
+                <label for="personaje">8. Personaje/Skin favorito para jugar:</label>
+                <select name="personaje_jugador" id="personaje">
+                    <option value="guardian" selected>El Guardián (White Tubby)</option>
+                    <option value="ron">Ron</option>
+                    <option value="military">Tubby Militar</option>
+                    <option value="custom">Skin Personalizada</option>
+                </select>
+            </div>
+
+            <!-- 9. Lista múltiple: plataformas -->
+            <div class="form-group">
+                <label for="plataforma">9. ¿En qué plataformas has jugado? (Ctrl/Cmd + clic para elegir varias):</label>
+                <select name="plataformas" id="plataforma" size="4" multiple>
+                    <option value="pc_windows">PC (Windows)</option>
+                    <option value="pc_mac">PC (macOS)</option>
+                    <option value="android">Android</option>
+                    <option value="ios">iOS</option>
+                </select>
+            </div>
+
+            <!-- 10. Lista: idioma -->
+            <div class="form-group">
+                <label for="idioma">10. Idioma preferido para jugar:</label>
+                <select name="idiomas" id="idioma" size="4">
+                    <option value="es" selected>Español</option>
+                    <option value="en">Inglés</option>
+                    <option value="pt">Portugués</option>
+                    <option value="ru">Ruso</option>
+                </select>
+            </div>
+
+            <!-- 11. Texto largo: terror -->
+            <div class="form-group">
+                <label for="comentarios">11. Cuéntanos tu momento más terrorífico jugando:</label>
+                <textarea name="experiencia_terror" id="comentarios" rows="5" maxlength="2000" placeholder="Escribe aquí tu anécdota en Tubbylandia..."></textarea>
+            </div>
+
+            <!-- 12. Texto largo: sugerencias -->
+            <div class="form-group">
+                <label for="feedback">12. Mensaje o sugerencias para los desarrolladores (Zeoworks):</label>
+                <textarea name="feedback_zeoworks" id="feedback" rows="4" maxlength="2000" placeholder="¿Qué te gustaría ver en futuros proyectos?"></textarea>
+            </div>
+
+            <!-- 13. Confirmación obligatoria -->
+            <div class="form-group">
+                <div class="options-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terminos" value="aceptado" required> 13. Confirmo que sobreviví a la noche en el bosque.
+                    </label>
+                </div>
+            </div>
+
+            <!-- 14. Suscripción -->
+            <div class="form-group">
+                <div class="options-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="boletin" value="si"> 14. Deseo recibir noticias de nuevos juegos de Zeoworks por correo.
+                    </label>
+                </div>
+            </div>
+
+            <!-- 15. Código predeterminado -->
+            <div class="form-group">
+                <label for="codigo_comunidad">15. Código de servidor / comunidad:</label>
+                <input type="text" id="codigo_comunidad" name="codigo_fan" maxlength="40" value="ZEOWORKS-FAN-2026">
+            </div>
+
+            <!-- Mensaje de error -->
+            <p id="error" class="mensaje mensaje-error" role="alert" hidden></p>
+
+            <div class="button-group">
+                <button type="submit" id="btn-enviar" class="btn btn-submit">Enviar formulario</button>
+                <button type="reset" class="btn btn-reset">Borrar respuestas</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // ================================================================
+        // PEGA AQUÍ la URL de tu aplicación web de Google Apps Script
+        // (termina en /exec). Mira los pasos de configuración.
+        // ================================================================
+        const URL_APPS_SCRIPT = https://script.google.com/macros/s/AKfycbxyc06qO2DyLp2LqXH4i2UEPHlOve6FYwWEOLLFay4AREUtR8e563R-Rx3W3dqtkGPq/exec;
+
+        const formulario = document.getElementById("formulario");
+        const btnEnviar  = document.getElementById("btn-enviar");
+        const cajaError  = document.getElementById("error");
+        const cajaExito  = document.getElementById("exito");
+
+        function mostrarError(texto) {
+            cajaError.textContent = texto;
+            cajaError.hidden = false;
+            cajaError.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
+        formulario.addEventListener("submit", async (evento) => {
+            evento.preventDefault();
+            cajaError.hidden = true;
+
+            if (URL_APPS_SCRIPT.includes("PEGA_AQUI")) {
+                mostrarError("Falta configurar la URL de Google Apps Script en index.html.");
+                return;
+            }
+
+            // Validación nativa del navegador (required, maxlength...)
+            if (!formulario.reportValidity()) return;
+
+            btnEnviar.disabled = true;
+            btnEnviar.textContent = "Enviando...";
+
+            // FormData ya incluye todas las opciones marcadas (checkbox y listas múltiples)
+            const cuerpo = new URLSearchParams();
+            for (const [clave, valor] of new FormData(formulario).entries()) {
+                cuerpo.append(clave, valor);
+            }
+
+            try {
+                // "no-cors": Google Apps Script no devuelve cabeceras CORS,
+                // pero la petición sí llega y se procesa.
+                await fetch(URL_APPS_SCRIPT, { method: "POST", mode: "no-cors", body: cuerpo });
+                formulario.hidden = true;
+                cajaExito.hidden = false;
+                cajaExito.scrollIntoView({ behavior: "smooth", block: "start" });
+            } catch (err) {
+                mostrarError("No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.");
+                btnEnviar.disabled = false;
+                btnEnviar.textContent = "Enviar formulario";
+            }
+        });
+    </script>
+</body>
+</html>

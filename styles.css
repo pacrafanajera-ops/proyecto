@@ -1,0 +1,239 @@
+/* Estilos Generales y Fondo Temático Slendytubbies */
+body {
+    background-image: url('ST3.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #0b0f0c; /* Respaldo si la imagen no carga */
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #d2ded1;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    background-color: rgba(15, 20, 16, 0.92); /* Fondo semitransparente oscuro */
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+    border: 1px solid #233827;
+    box-sizing: border-box;
+}
+
+header {
+    border-bottom: 2px solid #b30000; /* Línea roja de alerta */
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h1 {
+    color: #f3c614; /* Amarillo Tubby Papilla */
+    margin-top: 0;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.subtitle {
+    color: #8da491;
+    font-size: 0.95rem;
+    margin: 5px 0 0 0;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+label,
+.group-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #e2ede1;
+    font-size: 0.95rem;
+}
+
+/* Cajas de texto, password, select y textarea */
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #172119;
+    border: 1px solid #2e4733;
+    border-radius: 6px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #f3c614;
+    box-shadow: 0 0 8px rgba(243, 198, 20, 0.4);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Opciones de Radio y Checkbox */
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #121914;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #203124;
+}
+
+.radio-label, .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+    color: #b5c7b7;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    accent-color: #b30000; /* Acento rojo sangre en casillas */
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+input[type="radio"]:focus-visible,
+input[type="checkbox"]:focus-visible {
+    outline: 2px solid #f3c614;
+    outline-offset: 2px;
+}
+
+/* Listas de selección múltiple */
+select[multiple] {
+    height: 100px;
+}
+
+/* Campo trampa anti-spam: fuera de la vista pero presente en el HTML */
+.hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Mensajes de estado */
+.mensaje {
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin: 0 0 20px 0;
+}
+
+.mensaje[hidden] {
+    display: none;
+}
+
+.mensaje-exito {
+    background-color: #14261a;
+    border: 1px solid #2e7a3f;
+    text-align: center;
+}
+
+.mensaje-exito h2 {
+    color: #f3c614;
+    margin: 0 0 6px 0;
+    font-size: 1.4rem;
+}
+
+.mensaje-exito p {
+    margin: 0;
+}
+
+.mensaje-error {
+    background-color: #2a1212;
+    border: 1px solid #b30000;
+    color: #ffb3b3;
+}
+
+/* Sección de Botones */
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #203124;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus-visible {
+    outline: 2px solid #f3c614;
+    outline-offset: 2px;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.btn-submit {
+    background-color: #b30000; /* Rojo Alerta / Sangre */
+    color: #ffffff;
+    flex: 2;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: #d10000;
+}
+
+.btn-reset {
+    background-color: #2b3b2e;
+    color: #cdded0;
+    flex: 1;
+}
+
+.btn-reset:hover {
+    background-color: #384c3c;
+}
+
+@media (max-width: 520px) {
+    body { padding: 10px; }
+    .container { padding: 20px 16px; }
+    h1 { font-size: 1.5rem; }
+}
